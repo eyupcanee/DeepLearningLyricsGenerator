@@ -16,16 +16,13 @@ translator = str.maketrans('', '', string.punctuation)
 
 # Verilerin Import Edilmesi
 
-import pandas as pd
 
-
-df = pd.read_csv("./lyrics.csv", sep="\t", nrows=4000)
+df = pd.read_csv("./lyrics.csv", sep="\t", nrows=2000)
 df.head()
 
 
-pdf = pd.read_csv("./PoetryFoundationData.csv", quotechar='"', nrows=1000)
+pdf = pd.read_csv("./PoetryFoundationData.csv", quotechar='"', nrows=500)
 pdf.head()
-
 
 
 # Veri temizleme işlemleri.
@@ -202,3 +199,5 @@ model.fit(generator(X_train, y_train, BATCH_SIZE),
           callbacks=callbacks_list,
           validation_data=generator(X_test, y_train, BATCH_SIZE),
           validation_steps=int(len(y_train)/BATCH_SIZE) + 1)
+
+# Bitis
